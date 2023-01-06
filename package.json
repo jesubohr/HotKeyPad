@@ -1,6 +1,4 @@
 {
-  "name": "hotkeypadder",
-  "version": "0.0.0",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -10,16 +8,19 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "preview": "turbo run build --filter=hotkeypad",
+    "changeset": "changeset",
+    "release": "turbo run build --filter=hotkeypad && changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "2.25.2",
     "eslint-config-custom": "workspace:*",
     "prettier": "latest",
     "turbo": "latest"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
-  "dependencies": {},
   "packageManager": "pnpm@7.21.0"
 }
